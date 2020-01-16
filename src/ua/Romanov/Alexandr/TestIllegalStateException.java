@@ -1,9 +1,23 @@
 package ua.Romanov.Alexandr;
 
 public class TestIllegalStateException {
-    TestNullPointerException testNullPointerException;
-    void getTestNullPointerException(){
-        System.out.println(testNullPointerException);
+    static  TestIllegalStateException stateException;
+
+    public static TestIllegalStateException getStateException()  {
+        try {
+if (stateException==null)
+    throw new IllegalStateException();
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+        return stateException;
+    }
+    public static TestIllegalStateException getStateExcBad(){
+        return stateException;
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
