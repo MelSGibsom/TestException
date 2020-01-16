@@ -1,7 +1,7 @@
 package ua.Romanov.Alexandr;
 
-public class TestIllegalArgumentException {
-     int age =23;
+public class TestIllegalArgumentException  {
+     int age =0;
      int age2 =0;
 
     public TestIllegalArgumentException(int age, int age2) {
@@ -11,9 +11,15 @@ public class TestIllegalArgumentException {
 
     int getAge(){
 
-       if (age == 0||age<0){
-           throw new IllegalArgumentException("Illegal Argument Exception");
-       } return age;
+        try {
+            if (age == 0||age<0){
+                throw new IllegalArgumentException("Illegal Argument Exception");
+            }
+           // return age;
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+        return age;
     }
    int geAge2(){
         return  age2;
